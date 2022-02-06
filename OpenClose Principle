@@ -1,0 +1,62 @@
+abstract class Area
+{
+   public abstract int calculate_area();
+    
+}
+class rectangle extends Area
+{
+    int length;
+    int breadth;
+    rectangle(int length,int breadth)
+    {
+        this.length=length;
+        this.breadth=breadth;
+    }
+   public int calculate_area()
+    {
+        return length*breadth;
+    }
+}
+class triangle extends Area
+{
+    int base;
+    int height;
+    triangle(int base,int height)
+    {
+        this.base=base;
+        this.height=height;
+    }
+    public int calculate_area()
+    {
+        return 5*base*height;
+    }
+}
+class application
+{
+   public int calculate_total_area(Area[] ab)
+    {int total=0;
+        for(Area a1:ab)
+        {
+        total+=a1.calculate_area();
+        }
+        return total;
+        
+    }
+
+}
+public class Main
+{
+    public static void main (String[] args)
+    {   
+        Area[] ab=new Area[2];
+        
+        rectangle r=new rectangle(10,20);
+        ab[0]=r;
+        triangle t=new triangle(10,20);
+        ab[1]=t;
+        application a=new application();
+        int rans=a.calculate_total_area(ab);
+        System.out.println(rans);
+
+    }
+}
