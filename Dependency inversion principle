@@ -1,0 +1,44 @@
+ interface IService
+{
+ void Serve();
+}
+
+ class Service implements IService
+{
+ public void Serve()
+ {
+ System.out.println("Service Called");
+
+ 
+ }
+}
+
+class Client
+{
+ private IService _service;
+
+  Client(IService service)
+ {
+ this._service = service;
+ }
+
+ public void Start()
+ {
+ System.out.println("Service Started");
+ this._service.Serve();
+
+
+ }
+}
+//Sample Builder-Implementation:
+
+class Main
+{
+ public static void main(String[] args)
+ {
+ Client client = new Client(new Service());
+ client.Start();
+
+ 
+ }
+}
