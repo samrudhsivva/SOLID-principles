@@ -1,3 +1,44 @@
+interface twodim
+{
+    int area();
+}
+class rectangle implements twodim
+{
+    int l,b;
+    rectangle(int l,int b)
+    {
+        this.l=l;
+        this.b=b;
+    }
+   public int area()
+    {
+        return this.l*this.b;
+    }
+}
+class square implements twodim
+{
+    int l;
+    square(int l)
+    {
+        this.l=l;
+       
+    }
+    public int area()
+    {
+        return this.l*this.l;
+    }
+}
+public class Main
+{
+    public static void main (String[] args) 
+    {
+     
+     rectangle r = new rectangle(10,20);
+    square s =new square(10);
+    System.out.println(r.area() +" "+ s.area());
+    }
+}
+--------------------------------------------------------
 public class Student   
 {  
 private double height;  
