@@ -1,3 +1,46 @@
+interface inttochar
+{
+   abstract char inttocharm(int i);
+}
+interface floattoint
+{
+ abstract int floattointm(float f);
+}
+class inttocharc implements inttochar
+{
+    int i;
+    inttocharc(int i)
+    {
+        this.i=i;
+    }
+   public char inttocharm(int i)
+    {
+        char i1=(char)i;
+        return i1;
+    }
+}
+class floattointc implements floattoint
+{float i;
+    floattointc(float i)
+    {
+        this.i=i;
+    }
+  public  int floattointm(float i)
+    {
+        int i2=(int)i;
+        return i2;
+    }
+}
+public class Main
+{
+    public static void main (String[] args)
+    
+    {
+        floattointc o1=new floattointc(1.2f);
+        System.out.println(o1.floattointm(24.423f));
+    }
+}
+-----------------------------------------------
 public interface ConvertIntToDouble  
 {  
 public void intToDouble();  
