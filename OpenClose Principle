@@ -60,3 +60,34 @@ public class Main
 
     }
 }
+----------------------------------------------------------------------------------
+(BASIC EXAMPLE)
+class V
+{
+    int getV()
+    {
+        return 1;
+    }
+}
+class car extends V
+{
+    int getV()
+    {
+        return 1;
+    }
+}
+class Truck extends V
+{
+    int getV()
+    {
+        return 22;
+    }
+}
+public class Main
+{
+    public static void main (String[] args) 
+    {
+        Truck t=new Truck();
+        System.out.println(t.getV());
+    }
+}
