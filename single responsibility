@@ -1,44 +1,36 @@
-public class Student  
-{  
-public void printDetails();  
-{  
-//functionality of the method  
-}  
-pubic void calculatePercentage();  
-{  
-//functionality of the method  
-}  
-public void addStudent();  
-{  
-//functionality of the method  
-}  
-}  
-The above code snippet violates the single responsibility principle. To achieve the goal of the principle, we should implement a separate class that performs a single functionality only.
-
-Student.java
-
-public class Student  
-{  
-public void addStudent();  
-{  
-//functionality of the method  
-}  
-}  
-PrintStudentDetails.java
-
-public class PrintStudentDetails  
-{  
-public void printDetails();  
-{  
-//functionality of the method  
-}  
-}  
-Percentage.java
-
-public class Percentage  
-{  
-public void calculatePercentage();  
-{  
-//functionality of the method  
-}  
+class Student
+{
+    int marks;
+    String name;
+    Student(int marks,String name)
+    {
+        this.marks=marks;
+        this.name=name;
+    }
+}
+class Studentmarks
+{
+    int getMarks(Student s)
+    {
+        return s.marks;
+    }
+}
+class Studentname
+{
+    String getName(Student s)
+    {
+        return s.name;
+    }
+}
+public class Main
+{
+    public static void main (String[] args) 
+    {
+        Student s=new Student(95,"samrudh");
+        Studentmarks sm=new Studentmarks();
+        System.out.println(sm.getMarks(s));
+        Studentname sn=new Studentname();
+        System.out.println(sn.getName(s));
+        
+    }
 }
